@@ -1,17 +1,13 @@
 <?php
 
-const NAME = 'name';
-$name = 'University';
-
-function getName($name) {
-    return $name;
-}
-class School {
-   public function setName() {
-       echo $this->schoolName();
+class Teacher {
+    private $school_name;
+   
+   public function setName($name) {
+         $this->school_name = $name;
    }
-   public function schoolName() {
-       return $name;
+   public function getName() {
+       return $this->school_name;
    }
    public function teaching() {
        echo $this->schoolName . ' ' . $this->actionTeaching();
@@ -20,13 +16,12 @@ class School {
        return 'dạy học';
    }
 }
-class Students extends School {
+class Students extends Teacher {
     public function getTuition() {
-        echo $this->setName() . 'phải đóng học phí mới được đi học';
+        echo $this->getName() . 'phải đóng học phí mới được đi học';
     }
 }
 $student = new Students;
-$student = setName();
-$student = teaching();
-$student = getTuition();
+$student->getName('Diệp');
+$student->getTuition();
 ?>
