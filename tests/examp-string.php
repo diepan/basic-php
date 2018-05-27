@@ -22,20 +22,16 @@ $students = [
 $relaxs = [
     'bong cuoi', 'bong ban', 'bong da'
 ];
-$hobbys = [
-    'rat thich choi'
-];
+$hobby = 'rat thich choi';
 $str = 'Cac ban';
 foreach($students as $student){
-   $str .= ' '. $student .',';
+    $str .= ' '. $student .',';
 }
 $str = substr($str,0,-1);
 
-foreach($hobbys as $hobby){
-   $str .= ' ' . $hobby; 
-    foreach($relaxs as $relax){
-        $str .= ' ' .$relax .',' ;
-    }
+$str .= ' ' . $hobby; 
+foreach($relaxs as $relax){
+    $str .= ' ' .$relax .',' ;
 }
 $str = substr($str,0,-1) . '.';
 echo($str);
